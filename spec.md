@@ -12,6 +12,14 @@ Refonte complète du site [danser-la-vie.eu](https://www.danser-la-vie.eu/Lieu_d
 exemple
 https://xev.agency/
 
+
+# phase II
+je voudrai rajouter une section, 
+j'aimerai avoir un system pour collecter automatiquement tout les soirées, les weekend, les stages que l'on va avoir en normandie et limitrophe ( les departement qui touche la normadie
+donc le systeme doit se lancer automatiquement (cron ou a chaque consultation) et retrouver sur facebook, ou autre les events
+les danses cible sont evidement les danse enseigner
+fait moi un plan de dev et des proposition (dev, group facebook, archi deu service,...)
+
 parle moi toujours en francais
 pas de suppression ou l'on ne peut pas revenir en arriere
 lit le fichier spec.md
@@ -903,8 +911,259 @@ Site moderne avec design épuré, navigation claire, sections bien organisées e
 
 ---
 
-**Recommandations finales :** 
+## 🎭 Phase II : Collecte Automatique d'Événements de Danse
+
+### 📋 Objectif
+Implémenter un système automatique de collecte d'événements de danse en Normandie et départements limitrophes pour enrichir l'offre de stages et cours existants.
+
+### 🎯 Fonctionnalités à développer
+
+#### 1. **Collecteurs Automatiques**
+- **Eventbrite API** : Collecte d'événements payants (2000 req/h)
+- **Meetup API** : Collecte d'événements communautaires (GraphQL)
+- **Scraping Éthique** : Collecte depuis sites officiels (CNIL compliant)
+- **Sources spécialisées** : Fédération Française de Danse, MJC, salles municipales
+
+#### 2. **Zone Géographique Ciblée**
+- **Normandie** : Calvados (14), Eure (27), Manche (50), Orne (61), Seine-Maritime (76)
+- **Départements limitrophes** : Aisne (02), Aube (10), Eure-et-Loir (28), Loiret (45), Marne (51), Haute-Marne (52), Mayenne (53), Sarthe (72), Yvelines (78), Essonne (91), Val-d'Oise (95)
+
+#### 3. **Danses Ciblées**
+- Rock, Salsa, Tango, Valse, Cha-cha-cha, Rumba (correspond aux spécialités enseignées)
+
+### 🏗️ Architecture Technique
+
+#### **Nouveaux Content Types Strapi**
+```json
+// Événements collectés
+{
+  "kind": "collectionType",
+  "collectionName": "events",
+  "info": {
+    "singularName": "event",
+    "pluralName": "events",
+    "displayName": "Événement Externe"
+  },
+  "attributes": {
+    "title": { "type": "string", "required": true },
+    "description": { "type": "richtext" },
+    "startDate": { "type": "datetime", "required": true },
+    "endDate": { "type": "datetime" },
+    "location": { "type": "string" },
+    "address": { "type": "string" },
+    "city": { "type": "string" },
+    "department": { "type": "enumeration", "enum": ["14", "27", "50", "61", "76", "02", "10", "28", "45", "51", "52", "53", "72", "78", "91", "95"] },
+    "coordinates": { "type": "json" },
+    "price": { "type": "decimal" },
+    "danceType": {
+      "type": "enumeration",
+      "enum": ["rock", "salsa", "tango", "valse", "chachacha", "rumba"]
+    },
+    "organizer": { "type": "string" },
+    "source": { "type": "enumeration", "enum": ["eventbrite", "meetup", "scraping", "manual"] },
+    "sourceUrl": { "type": "string" },
+    "imageUrl": { "type": "string" },
+    "collectedAt": { "type": "datetime" },
+    "validated": { "type": "boolean", "default": false }
+  }
+}
+```
+
+#### **Service de Collecte (Backend Node.js)**
+```typescript
+// lib/event-collector.ts
+interface EventCollector {
+  collect(region: Region, dances: Dance[]): Promise<Event[]>;
+  validate(event: Event): boolean;
+  rateLimit: number;
+}
+
+class EventbriteCollector implements EventCollector {
+  // Implémentation Eventbrite API
+}
+
+class MeetupCollector implements EventCollector {
+  // Implémentation Meetup GraphQL API
+}
+
+class ScrapingCollector implements EventCollector {
+  // Implémentation scraping éthique
+}
+```
+
+#### **Planificateur Automatique**
+```typescript
+// lib/scheduler.ts
+class EventScheduler {
+  // Collecte quotidienne (2h du matin)
+  @Cron('0 2 * * *')
+  async dailyCollection() {
+    // Collecte depuis toutes les sources
+  }
+
+  // Mise à jour temps réel (toutes les 6h)
+  @Cron('0 */6 * * *')
+  async realTimeUpdates() {
+    // Mise à jour événements récents
+  }
+}
+```
+
+#### **API Routes Next.js**
+```typescript
+// app/api/events/route.ts
+export async function GET(request: Request) {
+  const { searchParams } = new URL(request.url);
+  const region = searchParams.get('region');
+  const dance = searchParams.get('dance');
+
+  // Récupération depuis Strapi avec filtres
+  const events = await strapiClient.getEvents({ region, dance });
+  return Response.json(events);
+}
+```
+
+### 🎨 Interface Utilisateur
+
+#### **Nouvelle Page `/evenements`**
+- **Filtres avancés** : Région, danse, date, prix
+- **Carte interactive** : Géolocalisation des événements
+- **Liste paginée** : Événements triés par pertinence
+- **Détails événement** : Modal avec informations complètes
+- **Notifications** : Alertes pour nouveaux événements
+
+#### **Intégration Pages Existantes**
+- **Page d'accueil** : Section "Événements à proximité"
+- **Page stages** : Comparaison avec événements externes
+- **Footer** : Lien vers la section événements
+
+### 📊 Métriques et Monitoring
+
+#### **Tableau de Bord Admin (Strapi)**
+- **Statistiques collecte** : Nombre d'événements par source
+- **Taux de succès** : % événements validés
+- **Couverture géographique** : Départements couverts
+- **Performance** : Temps de collecte moyen
+
+#### **Logs et Alertes**
+- **Logs détaillés** : Succès/échecs de collecte
+- **Alertes admin** : Problèmes de collecte ou quotas dépassés
+- **Rapports hebdomadaires** : Statistiques d'activité
+
+### ⚖️ Conformité Légal
+
+#### **CNIL Compliance**
+- **Intérêt légitime** : Information culturelle et touristique
+- **Proportionnalité** : Collecte ciblée uniquement événements danse
+- **Transparence** : Mention des sources dans l'interface
+- **Droit d'opposition** : Possibilité de signaler/supprimer événements
+
+#### **Conditions Scraping**
+- **Rate limiting** respectueux (délais entre requêtes)
+- **User-Agent** identifiable
+- **Respect robots.txt**
+- **Pas de données personnelles** sensibles
+- **Cache intelligent** pour éviter la surcharge
+
+### 🚀 Plan de Développement (8 semaines)
+
+#### **Semaine 1-2 : Infrastructure**
+- [ ] Créer content type "Event" dans Strapi
+- [ ] Implémenter collecteur Eventbrite API
+- [ ] Configuration base de données et cache
+- [ ] Tests unitaires des collecteurs
+
+#### **Semaine 3-4 : Collecteurs Meetup & Scraping**
+- [ ] Intégration Meetup GraphQL API
+- [ ] Configuration Puppeteer pour scraping éthique
+- [ ] Géolocalisation et filtrage par département
+- [ ] Validation automatique des événements
+
+#### **Semaine 5-6 : Orchestration**
+- [ ] Planificateur automatique (cron jobs)
+- [ ] Cache Redis pour optimisation
+- [ ] Gestion des erreurs et retry logic
+- [ ] Monitoring et logs détaillés
+
+#### **Semaine 7-8 : Interface & Finalisation**
+- [ ] Page frontend `/evenements` avec filtres
+- [ ] Carte interactive et géolocalisation
+- [ ] Intégration avec pages existantes
+- [ ] Tests end-to-end et optimisation
+
+### 💰 Budget et Ressources
+
+#### **Développement (8 semaines)**
+- **Développeur Fullstack** : 15 000€
+- **Licences APIs** : 500€/an (Eventbrite premium)
+- **Infrastructure** : 200€/mois (hébergement supplémentaire)
+
+#### **Maintenance Annuelle**
+- **APIs premium** : 600€
+- **Monitoring** : 300€
+- **Support** : 1 000€
+
+**Total première année** : ~22 000€
+
+### 🎯 Bénéfices Attendus
+
+#### **Pour les Utilisateurs**
+- **Découverte** : Plus de 500 événements/an dans la région
+- **Praticité** : Tous les événements danse centralisés
+- **Économie** : Comparaison prix et localisation
+- **Communauté** : Renforcement du réseau danse normand
+
+#### **Pour l'École**
+- **Visibilité** : Positionnement comme référence régionale
+- **Trafic** : Augmentation des visites et inscriptions
+- **Revenus** : Potentiel upsell vers stages internes
+- **Données** : Insights sur demandes locales
+
+### 🔧 Intégration avec Stack Existante
+
+#### **Backend Strapi (extension)**
+- **Nouveau content type** : events (événements externes)
+- **API REST étendue** : Endpoints pour événements filtrés
+- **Upload médias** : Images des événements collectés
+- **Permissions** : Accès public en lecture seule
+
+#### **Frontend Next.js (nouvelles pages)**
+- **Page dédiée** : `/evenements` avec interface complète
+- **Composants partagés** : Réutilisation des filtres existants
+- **API client** : Intégration avec nouvelle API events
+- **Responsive design** : Cohérent avec le design existant
+
+#### **Base de Données**
+- **Nouvelle table** : events avec index géographiques
+- **Relations** : Possibilité de lier avec stages internes
+- **Cache** : Redis pour performance optimale
+- **Backup** : Inclusion dans stratégie existante
+
+### 📈 Évolution Future
+
+#### **Phase 1** : Collecte automatique (implémentation actuelle)
+#### **Phase 2** : Intelligence artificielle
+- Filtrage automatique par pertinence
+- Détection de doublons
+- Analyse des tendances saisonnières
+
+#### **Phase 3** : Réseau social intégré
+- Commentaires et notations des événements
+- Partage sur réseaux sociaux
+- Calendrier personnel synchronisé
+
+### ✅ Critères de Succès
+
+- **Collecte** : 500+ événements/mois
+- **Précision** : 90% événements réellement liés à la danse
+- **Performance** : <2s pour les recherches
+- **Satisfaction** : 4/5 étoiles utilisateurs
+- **Trafic** : +30% visites sur la section événements
+
+---
+
+**Recommandations finales :**
 - Stack Next.js + Strapi + Stripe est maintenant pleinement fonctionnel
-- **Les données sont prêtes pour l'utilisation en production
+- **Les données sont prêtes pour l'utilisation en production**
 - **Le frontend peut être déployé sur Vercel et le backend sur Railway**
-- **Le système est prêt pour la phase 2 de développement**
+- **Le système est prêt pour la phase 2 de développement : Collecte d'événements**
