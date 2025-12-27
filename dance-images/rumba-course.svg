@@ -1,0 +1,7 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="800" height="600" fill="#be185d"/>
+    <text x="400" y="250" font-family="Arial" font-size="36" fill="white" text-anchor="middle">Rumba</text>
+    <polygon points="300,400 250,350 350,350" fill="#ec4899" opacity="0.8"/>
+    <polygon points="500,400 450,350 550,350" fill="#ec4899" opacity="0.8"/>
+    <text x="400" y="520" font-family="Arial" font-size="24" fill="#fdf2f8" text-anchor="middle">Danse romantique et sensuelle</text>
+  </svg>

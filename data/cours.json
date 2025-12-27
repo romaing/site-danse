@@ -1,0 +1,99 @@
+{
+  "danses": [
+    {
+      "id": 1,
+      "name": "Rock",
+      "description": "Danse énergique et rythmée, parfaite pour débuter",
+      "level": "Tous niveaux",
+      "duration": "1h"
+    },
+    {
+      "id": 2,
+      "name": "Salsa",
+      "description": "Danse latine sensuelle et festive",
+      "level": "Tous niveaux",
+      "duration": "1h"
+    },
+    {
+      "id": 3,
+      "name": "Tango",
+      "description": "Danse de salon élégante et passionnée",
+      "level": "Intermédiaire",
+      "duration": "1h30"
+    },
+    {
+      "id": 4,
+      "name": "Valse",
+      "description": "Valse lente et valse viennoise",
+      "level": "Tous niveaux",
+      "duration": "1h"
+    },
+    {
+      "id": 5,
+      "name": "Cha-cha-cha",
+      "description": "Danse latine rythmée et joyeuse",
+      "level": "Tous niveaux",
+      "duration": "1h"
+    },
+    {
+      "id": 6,
+      "name": "Rumba",
+      "description": "Danse latine romantique",
+      "level": "Intermédiaire",
+      "duration": "1h"
+    }
+  ],
+  "planning": [
+    {
+      "jour": "Lundi",
+      "cours": [
+        {
+          "danse": "Rock",
+          "heure": "19h-20h",
+          "niveau": "Débutant",
+          "lieu": "Salle principale"
+        },
+        {
+          "danse": "Salsa",
+          "heure": "20h-21h",
+          "niveau": "Intermédiaire",
+          "lieu": "Salle principale"
+        }
+      ]
+    },
+    {
+      "jour": "Mercredi",
+      "cours": [
+        {
+          "danse": "Tango",
+          "heure": "19h-20h30",
+          "niveau": "Intermédiaire",
+          "lieu": "Salle principale"
+        },
+        {
+          "danse": "Valse",
+          "heure": "20h30-21h30",
+          "niveau": "Tous niveaux",
+          "lieu": "Salle principale"
+        }
+      ]
+    },
+    {
+      "jour": "Vendredi",
+      "cours": [
+        {
+          "danse": "Cha-cha-cha",
+          "heure": "19h-20h",
+          "niveau": "Débutant",
+          "lieu": "Salle principale"
+        },
+        {
+          "danse": "Rumba",
+          "heure": "20h-21h",
+          "niveau": "Intermédiaire",
+          "lieu": "Salle principale"
+        }
+      ]
+    }
+  ]
+}

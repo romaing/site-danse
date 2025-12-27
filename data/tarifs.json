@@ -1,0 +1,68 @@
+{
+  "tarifs": [
+    {
+      "id": 1,
+      "nom": "Stage Introductif",
+      "type": "stage",
+      "prix": 299,
+      "duree": "3 jours",
+      "includes": [
+        "Hébergement",
+        "Repas",
+        "Cours de danse",
+        "Accès aux installations"
+      ]
+    },
+    {
+      "id": 2,
+      "nom": "Stage Avancé",
+      "type": "stage",
+      "prix": 399,
+      "duree": "5 jours",
+      "includes": [
+        "Hébergement",
+        "Repas",
+        "Cours de danse avancés",
+        "Accès aux installations",
+        "Ateliers pratiques"
+      ]
+    },
+    {
+      "id": 3,
+      "nom": "Cours Réguliers",
+      "type": "cours",
+      "prix": 50,
+      "duree": "1h par semaine",
+      "includes": ["Cours de danse", "Accès aux installations"],
+      "populaire": true,
+      "economie": "Économisez 10€ par mois avec un abonnement annuel"
+    },
+    {
+      "id": 4,
+      "nom": "Abonnement Trimestriel",
+      "type": "cours",
+      "prix": 120,
+      "duree": "1h par semaine",
+      "includes": [
+        "Cours de danse",
+        "Accès aux installations",
+        "Réduction de 20%"
+      ]
+    },
+    {
+      "id": 5,
+      "nom": "Abonnement Annuel",
+      "type": "cours",
+      "prix": 400,
+      "duree": "1h par semaine",
+      "includes": [
+        "Cours de danse",
+        "Accès aux installations",
+        "Réduction de 30%",
+        "Accès aux stages exclusifs"
+      ],
+      "populaire": true,
+      "economie": "Économisez 100€ par an"
+    }
+  ]
+}

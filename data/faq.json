@@ -1,0 +1,39 @@
+{
+  "faqs": [
+    {
+      "category": "Stages",
+      "question": "Comment s'inscrire à un stage ?",
+      "answer": "Vous pouvez vous inscrire directement en ligne via notre page d'inscription. Sélectionnez le stage de votre choix, remplissez le formulaire et procédez au paiement. Un acompte de 30% est demandé à l'inscription."
+    },
+    {
+      "category": "Stages",
+      "question": "Quel niveau faut-il avoir pour participer à un stage ?",
+      "answer": "Nos stages sont ouverts à tous les niveaux, du débutant complet au niveau avancé. Les cours sont organisés par groupes de niveau pour que chacun progresse à son rythme."
+    },
+    {
+      "category": "Stages",
+      "question": "Que comprend le prix d'un stage ?",
+      "answer": "Le prix comprend généralement l'hébergement, les repas, les cours de danse et l'accès aux installations. Les détails exacts sont indiqués sur la page de chaque stage."
+    },
+    {
+      "category": "Cours",
+      "question": "Où ont lieu les cours ?",
+      "answer": "Les cours ont lieu dans notre salle principale située à Barlieu. L'adresse exacte vous sera communiquée lors de l'inscription."
+    },
+    {
+      "category": "Cours",
+      "question": "Peut-on essayer un cours avant de s'inscrire ?",
+      "answer": "Oui, vous pouvez participer à un cours à l'unité pour découvrir avant de vous engager sur un abonnement."
+    },
+    {
+      "category": "Paiement",
+      "question": "Quels moyens de paiement acceptez-vous ?",
+      "answer": "Nous acceptons les paiements par carte bancaire via notre système sécurisé Stripe, ainsi que les virements bancaires."
+    },
+    {
+      "category": "Paiement",
+      "question": "Puis-je annuler mon inscription ?",
+      "answer": "Oui, l'annulation est possible jusqu'à 30 jours avant le stage avec remboursement intégral. Entre 30 et 15 jours : remboursement de 50%. Moins de 15 jours : pas de remboursement sauf cas de force majeure."
+    }
+  ]
+}

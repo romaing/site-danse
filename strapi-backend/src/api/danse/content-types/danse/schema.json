@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "danses",
+  "info": {
+    "singularName": "danse",
+    "pluralName": "danses",
+    "displayName": "Danse"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    }
+  }
+}

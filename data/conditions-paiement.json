@@ -1,0 +1,25 @@
+{
+  "titre": "Conditions de Paiement",
+  "conditions": [
+    {
+      "id": 1,
+      "titre": "Modalités de Paiement",
+      "description": "Nous acceptons les paiements par carte bancaire via notre système sécurisé Stripe, ainsi que les virements bancaires. Un acompte de 30% est demandé à l'inscription pour les stages."
+    },
+    {
+      "id": 2,
+      "titre": "Annulation",
+      "description": "L'annulation est possible jusqu'à 30 jours avant le stage avec remboursement intégral. Entre 30 et 15 jours : remboursement de 50%. Moins de 15 jours : pas de remboursement sauf cas de force majeure."
+    },
+    {
+      "id": 3,
+      "titre": "Paiement en plusieurs fois",
+      "description": "Pour les stages, il est possible de payer en plusieurs fois. Veuillez nous contacter pour plus d'informations."
+    },
+    {
+      "id": 4,
+      "titre": "Paiement des cours",
+      "description": "Les cours peuvent être payés mensuellement, trimestriellement ou annuellement. Les abonnements annuels offrent des réductions supplémentaires."
+    }
+  ]
+}

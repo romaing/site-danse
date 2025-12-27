@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pages",
+  "info": {
+    "singularName": "page",
+    "pluralName": "pages",
+    "displayName": "Page",
+    "description": "Pages statiques du site (mentions légales, CGV, etc.)"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titre": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "slug": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "contenu": {
+      "type": "richtext",
+      "required": true
+    },
+    "meta_description": {
+      "type": "text",
+      "maxLength": 160
+    },
+    "meta_title": {
+      "type": "string",
+      "maxLength": 60
+    },
+    "categorie": {
+      "type": "enumeration",
+      "enum": ["legales", "informations", "autres"],
+      "default": "autres"
+    },
+    "publishedAt": {
+      "type": "datetime"
+    }
+  }
+}

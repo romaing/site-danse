@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "stages",
+  "info": {
+    "singularName": "stage",
+    "pluralName": "stages",
+    "displayName": "Stage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titre": {
+      "type": "string",
+      "required": true
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "prix": {
+      "type": "decimal"
+    },
+    "date_debut": {
+      "type": "date"
+    },
+    "date_fin": {
+      "type": "date"
+    },
+    "lieu": {
+      "type": "string"
+    },
+    "niveau": {
+      "type": "enumeration",
+      "enum": ["debutant", "intermediaire", "avance", "tous_niveaux"]
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    }
+  }
+}

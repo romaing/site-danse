@@ -1,0 +1,54 @@
+{
+  "professeurs": [
+    {
+      "id": 1,
+      "nom": "Schlienger",
+      "prenom": "Jonathan",
+      "photo": "/uploads/photo-professeur.jpg",
+      "bio": "Moniteur diplômé de Danse de Salon avec plus de 15 ans d'expérience. Spécialisé dans l'enseignement de la danse de salon pour tous les niveaux.",
+      "specialites": [
+        "Rock",
+        "Salsa",
+        "Tango",
+        "Valse",
+        "Cha-cha-cha",
+        "Rumba"
+      ],
+      "diplome": "Moniteur diplômé de Danse de Salon",
+      "email": "danser-la-vie@orange.fr",
+      "telephone": "06 50 54 17 45"
+    },
+    {
+      "id": 2,
+      "nom": "Martin",
+      "prenom": "Sophie",
+      "photo": "/uploads/pierre_martin_ab73da23cb.png",
+      "bio": "Professeure de danse latine avec 10 ans d'expérience. Passionnée par la Salsa, la Bachata et le Cha-cha-cha.",
+      "specialites": [
+        "Salsa",
+        "Bachata",
+        "Cha-cha-cha",
+        "Merengue"
+      ],
+      "diplome": "Professeure certifiée de danses latines",
+      "email": "sophie.martin@danserlavie.fr",
+      "telephone": "06 12 34 56 78"
+    },
+    {
+      "id": 3,
+      "nom": "Dubois",
+      "prenom": "Marie",
+      "photo": "/uploads/marie_dubois_ae09437c59.jpg",
+      "bio": "Spécialiste du Tango argentin et des danses de salon classiques. Enseignante depuis 8 ans.",
+      "specialites": [
+        "Tango",
+        "Valse",
+        "Quickstep",
+        "Paso Doble"
+      ],
+      "diplome": "Maître de danse de salon",
+      "email": "marie.dubois@danserlavie.fr",
+      "telephone": "06 87 65 43 21"
+    }
+  ]
+}

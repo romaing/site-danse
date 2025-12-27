@@ -1,0 +1,57 @@
+{
+  "hero": {
+    "title": "Danser la Vie2",
+    "subtitle": "Stages et cours de danse de salon pour tous les niveaux",
+    "image": "/uploads/photo-1518611012118.jpg",
+    "primaryButton": {
+      "text": "Découvrir les stages",
+      "link": "/stages"
+    },
+    "secondaryButton": {
+      "text": "Voir les cours",
+      "link": "/cours"
+    }
+  },
+  "features": [
+    {
+      "icon": "calendar",
+      "title": "Stages réguliers",
+      "description": "Des stages toute l'année dans des lieux exceptionnels"
+    },
+    {
+      "icon": "users",
+      "title": "Tous niveaux",
+      "description": "Du débutant au niveau avancé, chacun trouve sa place"
+    },
+    {
+      "icon": "music",
+      "title": "Multi-danses",
+      "description": "Rock, Salsa, Tango, Valse et bien plus encore"
+    },
+    {
+      "icon": "award",
+      "title": "Professeurs diplômés",
+      "description": "Enseignement de qualité par des professionnels"
+    }
+  ],
+  "upcomingStages": {
+    "title": "Prochains stages",
+    "subtitle": "Découvrez nos prochains stages de danse dans des lieux magnifiques",
+    "button": {
+      "text": "Voir tous les stages",
+      "link": "/stages"
+    }
+  },
+  "cta": {
+    "title": "Prêt à danser ?",
+    "subtitle": "Rejoignez-nous pour découvrir la joie de la danse de salon. Inscrivez-vous dès maintenant à un stage ou à nos cours réguliers.",
+    "primaryButton": {
+      "text": "S'inscrire à un stage",
+      "link": "/inscription"
+    },
+    "secondaryButton": {
+      "text": "Nous contacter",
+      "link": "/contact"
+    }
+  }
+}

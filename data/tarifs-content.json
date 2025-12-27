@@ -1,0 +1,76 @@
+{
+  "tarifsStages": [
+    {
+      "nom": "Stage Danse & Ski",
+      "prix": 650,
+      "duree": "7 jours",
+      "includes": [
+        "Hébergement",
+        "Repas",
+        "Cours de danse (2h/jour minimum)",
+        "Accès installations hôtel"
+      ]
+    },
+    {
+      "nom": "Stage Standard",
+      "prix": 580,
+      "duree": "7 jours",
+      "includes": [
+        "Hébergement",
+        "Repas",
+        "Cours de danse",
+        "Soirées dansantes"
+      ]
+    },
+    {
+      "nom": "Dans'Intens",
+      "prix": 680,
+      "duree": "7 jours",
+      "includes": [
+        "Hébergement",
+        "Repas",
+        "Cours intensifs multi-danses",
+        "5 salles, 6 professeurs"
+      ]
+    }
+  ],
+  "tarifsCours": [
+    {
+      "nom": "Cours à l'unité",
+      "prix": 15,
+      "duree": "1 cours",
+      "includes": ["1 cours de 1h"]
+    },
+    {
+      "nom": "Carte 10 cours",
+      "prix": 130,
+      "duree": "10 cours",
+      "includes": ["10 cours valables 6 mois"],
+      "economie": "20€"
+    },
+    {
+      "nom": "Abonnement mensuel",
+      "prix": 50,
+      "duree": "1 mois",
+      "includes": ["Cours illimités", "Accès à tous les niveaux"],
+      "populaire": true
+    }
+  ],
+  "conditions": {
+    "titre": "Conditions de paiement",
+    "conditions": [
+      {
+        "titre": "Paiement en ligne",
+        "description": "Paiement sécurisé par carte bancaire via Stripe. Vous pouvez également régler par virement bancaire."
+      },
+      {
+        "titre": "Acompte",
+        "description": "Pour les stages, un acompte de 30% est demandé à l'inscription. Le solde est à régler 15 jours avant le début du stage."
+      },
+      {
+        "titre": "Annulation",
+        "description": "Annulation possible jusqu'à 30 jours avant le stage avec remboursement intégral. Entre 30 et 15 jours : remboursement de 50%. Moins de 15 jours : pas de remboursement sauf cas de force majeure."
+      }
+    ]
+  }
+}

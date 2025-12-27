@@ -1,0 +1,115 @@
+{
+  "stages": [
+    {
+      "id": 1,
+      "title": "Stage Danse & Ski à Pralognan",
+      "dateStart": "15 mars 2026",
+      "dateEnd": "22 mars 2026",
+      "date": "15-22 mars 2026",
+      "location": "Pralognan La Vanoise",
+      "address": "Hôtel Grand Bec",
+      "price": 650,
+      "image": "/uploads/photo-1547036967.jpg",
+      "status": "available",
+      "capacity": 30,
+      "available": 12,
+      "level": "Tous niveaux",
+      "description": "Un stage exceptionnel alliant danse et ski dans un cadre magnifique. Minimum 2 heures de cours par jour, soirées dansantes, accès piscine, jacuzzi et sauna.",
+      "program": [
+        "Cours de danse le matin (2h minimum)",
+        "Activités ski l'après-midi",
+        "Soirées dansantes",
+        "Accès aux installations de l'hôtel"
+      ],
+      "includes": [
+        "Hébergement",
+        "Repas",
+        "Cours de danse",
+        "Accès piscine, jacuzzi, sauna"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Stage à Royan",
+      "dateStart": "7 juin 2026",
+      "dateEnd": "13 juin 2026",
+      "date": "7-13 juin 2026",
+      "location": "Saint Georges de Didonne",
+      "address": "Centre Les Buissonnets",
+      "price": 668,
+      "image": "/uploads/photo-1504609773096.jpg",
+      "status": "available",
+      "capacity": 25,
+      "available": 8,
+      "level": "Tous niveaux",
+      "description": "Stage de danse avec accès direct à la plage. 2 niveaux de cours, hébergement tout confort.",
+      "program": [
+        "Cours de danse (2 niveaux)",
+        "Soirées dansantes",
+        "Accès à la plage",
+        "Repas inclus"
+      ],
+      "includes": [
+        "Hébergement",
+        "Repas",
+        "Cours de danse",
+        "Accès plage"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Dans'Intens Laguiole",
+      "dateStart": "8 août 2026",
+      "dateEnd": "15 août 2026",
+      "date": "8-15 août 2026",
+      "location": "Laguiole (Aveyron)",
+      "address": "Centre de stages",
+      "price": 580,
+      "image": "/uploads/photo-1518611012118.jpg",
+      "status": "available",
+      "capacity": 40,
+      "available": 15,
+      "level": "Tous niveaux",
+      "description": "Stage multidanse avec programme personnalisé. 5 salles, 6 professeurs, cours pour tous les niveaux du débutant au niveau 3.",
+      "program": [
+        "Cours intensifs multi-danses",
+        "5 salles disponibles",
+        "6 professeurs",
+        "Programme personnalisé"
+      ],
+      "includes": [
+        "Hébergement",
+        "Repas",
+        "Cours intensifs",
+        "Accès toutes les salles"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Stage en Touraine",
+      "dateStart": "24 octobre 2026",
+      "dateEnd": "31 octobre 2026",
+      "date": "24-31 octobre 2026",
+      "location": "Village de Vacances La Saulaie",
+      "address": "La Saulaie",
+      "price": 550,
+      "image": "/uploads/photo-1547036967.jpg",
+      "status": "full",
+      "capacity": 20,
+      "available": 0,
+      "level": "Tous niveaux",
+      "description": "Stage d'automne en Touraine. 2 salles, 2 professeurs, ambiance conviviale.",
+      "program": [
+        "Cours de danse",
+        "2 salles disponibles",
+        "2 professeurs",
+        "Soirées dansantes"
+      ],
+      "includes": [
+        "Hébergement",
+        "Repas",
+        "Cours de danse"
+      ]
+    }
+  ]
+}
