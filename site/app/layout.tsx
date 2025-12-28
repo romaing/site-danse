@@ -169,13 +169,28 @@ export default function RootLayout({
                       S'inscrire
                     </a>
                   </li>
-                  <li style={{ marginBottom: '0.75rem' }}>
-                    <a href="/contact" style={{ color: '#9ca3af', textDecoration: 'none', transition: 'color 0.3s ease' }}>
-                      Contact
-                    </a>
-                  </li>
-                </ul>
-              </div>
+                   <li style={{ marginBottom: '0.75rem' }}>
+                     <a href="/contact" style={{ color: '#9ca3af', textDecoration: 'none', transition: 'color 0.3s ease' }}>
+                       Contact
+                     </a>
+                   </li>
+                   <li style={{ marginBottom: '0.75rem' }}>
+                     <a href="/faq" style={{ color: '#9ca3af', textDecoration: 'none', transition: 'color 0.3s ease' }}>
+                       FAQ
+                     </a>
+                   </li>
+                   <li style={{ marginBottom: '0.75rem' }}>
+                     <a href="/tarifs" style={{ color: '#9ca3af', textDecoration: 'none', transition: 'color 0.3s ease' }}>
+                       Tarifs
+                     </a>
+                   </li>
+                   <li style={{ marginBottom: '0.75rem' }}>
+                     <a href="/akto" style={{ color: '#9ca3af', textDecoration: 'none', transition: 'color 0.3s ease' }}>
+                       Akto
+                     </a>
+                   </li>
+                 </ul>
+               </div>
 
                {/* Colonne 3 - Bouton contact */}
                 <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>

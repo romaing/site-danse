@@ -2,106 +2,313 @@ import React from 'react';
 
 export default function TarifsPage() {
   return (
-    <main className="min-h-screen bg-gray-50">
-      <div className="container mx-auto px-4 py-8">
-        <header className="mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Tarifs</h1>
-          <p className="text-lg text-gray-600">
-            Découvrez nos tarifs pour les stages et les cours réguliers
-          </p>
-        </header>
+    <div className="container py-12">
+      <h1 className="text-center mb-8">Tarifs</h1>
 
-        {/* Tarifs des stages */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Tarifs des Stages</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-white rounded-lg shadow-md p-6 border-t-4 border-blue-500">
-              <h3 className="text-xl font-semibold mb-4">Stage Découverte</h3>
-              <div className="mb-4">
-                <span className="text-3xl font-bold text-blue-600">120€</span>
-                <span className="text-gray-600">/ week-end</span>
+      <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+        <p style={{
+          fontSize: '1.25rem',
+          color: '#6b7280',
+          maxWidth: '600px',
+          margin: '0 auto',
+          lineHeight: '1.6'
+        }}>
+          Découvrez nos tarifs pour les stages et les cours réguliers
+        </p>
+      </div>
+
+      {/* Tarifs des stages */}
+      <div style={{ marginBottom: '3rem' }}>
+        <h2 style={{
+          fontSize: '2rem',
+          fontWeight: '700',
+          marginBottom: '2rem',
+          textAlign: 'center',
+          color: '#1f2937'
+        }}>
+          Tarifs des Stages
+        </h2>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+          gap: '1.5rem'
+        }}>
+          <div className="card" style={{
+            borderTop: '4px solid #3b82f6'
+          }}>
+            <div className="card-body">
+              <h3 style={{
+                fontSize: '1.25rem',
+                fontWeight: '600',
+                marginBottom: '1rem'
+              }}>
+                Stage Découverte
+              </h3>
+              <div style={{ marginBottom: '1rem' }}>
+                <span style={{
+                  fontSize: '2rem',
+                  fontWeight: '700',
+                  color: '#2563eb'
+                }}>
+                  120€
+                </span>
+                <span style={{ color: '#6b7280' }}> / week-end</span>
               </div>
-              <ul className="space-y-2 text-gray-600 mb-6">
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
+              <ul style={{
+                listStyle: 'none',
+                padding: 0,
+                marginBottom: '1.5rem',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '0.5rem'
+              }}>
+                <li style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  color: '#6b7280'
+                }}>
+                  <span style={{
+                    width: '8px',
+                    height: '8px',
+                    background: '#3b82f6',
+                    borderRadius: '50%',
+                    marginRight: '0.75rem'
+                  }}></span>
                   2 jours (samedi-dimanche)
                 </li>
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
+                <li style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  color: '#6b7280'
+                }}>
+                  <span style={{
+                    width: '8px',
+                    height: '8px',
+                    background: '#3b82f6',
+                    borderRadius: '50%',
+                    marginRight: '0.75rem'
+                  }}></span>
                   8 heures de cours
                 </li>
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
+                <li style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  color: '#6b7280'
+                }}>
+                  <span style={{
+                    width: '8px',
+                    height: '8px',
+                    background: '#3b82f6',
+                    borderRadius: '50%',
+                    marginRight: '0.75rem'
+                  }}></span>
                   Niveau débutant
                 </li>
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
+                <li style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  color: '#6b7280'
+                }}>
+                  <span style={{
+                    width: '8px',
+                    height: '8px',
+                    background: '#3b82f6',
+                    borderRadius: '50%',
+                    marginRight: '0.75rem'
+                  }}></span>
                   10 participants maximum
                 </li>
               </ul>
-              <button className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700">
+              <a href="/inscription" className="btn btn-primary" style={{ width: '100%', textAlign: 'center' }}>
                 S'inscrire
-              </button>
+              </a>
             </div>
+          </div>
 
-            <div className="bg-white rounded-lg shadow-md p-6 border-t-4 border-green-500">
-              <h3 className="text-xl font-semibold mb-4">Stage Intensif</h3>
-              <div className="mb-4">
-                <span className="text-3xl font-bold text-green-600">180€</span>
-                <span className="text-gray-600">/ week-end</span>
+          <div className="card" style={{
+            borderTop: '4px solid #10b981'
+          }}>
+            <div className="card-body">
+              <h3 style={{
+                fontSize: '1.25rem',
+                fontWeight: '600',
+                marginBottom: '1rem'
+              }}>
+                Stage Intensif
+              </h3>
+              <div style={{ marginBottom: '1rem' }}>
+                <span style={{
+                  fontSize: '2rem',
+                  fontWeight: '700',
+                  color: '#059669'
+                }}>
+                  180€
+                </span>
+                <span style={{ color: '#6b7280' }}> / week-end</span>
               </div>
-              <ul className="space-y-2 text-gray-600 mb-6">
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
+              <ul style={{
+                listStyle: 'none',
+                padding: 0,
+                marginBottom: '1.5rem',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '0.5rem'
+              }}>
+                <li style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  color: '#6b7280'
+                }}>
+                  <span style={{
+                    width: '8px',
+                    height: '8px',
+                    background: '#10b981',
+                    borderRadius: '50%',
+                    marginRight: '0.75rem'
+                  }}></span>
                   2 jours (samedi-dimanche)
                 </li>
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
+                <li style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  color: '#6b7280'
+                }}>
+                  <span style={{
+                    width: '8px',
+                    height: '8px',
+                    background: '#10b981',
+                    borderRadius: '50%',
+                    marginRight: '0.75rem'
+                  }}></span>
                   12 heures de cours
                 </li>
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
+                <li style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  color: '#6b7280'
+                }}>
+                  <span style={{
+                    width: '8px',
+                    height: '8px',
+                    background: '#10b981',
+                    borderRadius: '50%',
+                    marginRight: '0.75rem'
+                  }}></span>
                   Tous niveaux
                 </li>
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
+                <li style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  color: '#6b7280'
+                }}>
+                  <span style={{
+                    width: '8px',
+                    height: '8px',
+                    background: '#10b981',
+                    borderRadius: '50%',
+                    marginRight: '0.75rem'
+                  }}></span>
                   8 participants maximum
                 </li>
               </ul>
-              <button className="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700">
+              <a href="/inscription" className="btn btn-primary" style={{ width: '100%', textAlign: 'center' }}>
                 S'inscrire
-              </button>
+              </a>
             </div>
+          </div>
 
-            <div className="bg-white rounded-lg shadow-md p-6 border-t-4 border-purple-500">
-              <h3 className="text-xl font-semibold mb-4">Stage Premium</h3>
-              <div className="mb-4">
-                <span className="text-3xl font-bold text-purple-600">250€</span>
-                <span className="text-gray-600">/ 3 jours</span>
+          <div className="card" style={{
+            borderTop: '4px solid #8b5cf6'
+          }}>
+            <div className="card-body">
+              <h3 style={{
+                fontSize: '1.25rem',
+                fontWeight: '600',
+                marginBottom: '1rem'
+              }}>
+                Stage Premium
+              </h3>
+              <div style={{ marginBottom: '1rem' }}>
+                <span style={{
+                  fontSize: '2rem',
+                  fontWeight: '700',
+                  color: '#7c3aed'
+                }}>
+                  250€
+                </span>
+                <span style={{ color: '#6b7280' }}> / 3 jours</span>
               </div>
-              <ul className="space-y-2 text-gray-600 mb-6">
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
+              <ul style={{
+                listStyle: 'none',
+                padding: 0,
+                marginBottom: '1.5rem',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '0.5rem'
+              }}>
+                <li style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  color: '#6b7280'
+                }}>
+                  <span style={{
+                    width: '8px',
+                    height: '8px',
+                    background: '#8b5cf6',
+                    borderRadius: '50%',
+                    marginRight: '0.75rem'
+                  }}></span>
                   3 jours (vendredi-dimanche)
                 </li>
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
+                <li style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  color: '#6b7280'
+                }}>
+                  <span style={{
+                    width: '8px',
+                    height: '8px',
+                    background: '#8b5cf6',
+                    borderRadius: '50%',
+                    marginRight: '0.75rem'
+                  }}></span>
                   18 heures de cours
                 </li>
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
+                <li style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  color: '#6b7280'
+                }}>
+                  <span style={{
+                    width: '8px',
+                    height: '8px',
+                    background: '#8b5cf6',
+                    borderRadius: '50%',
+                    marginRight: '0.75rem'
+                  }}></span>
                   Niveau intermédiaire/avancé
                 </li>
-                <li className="flex items-center">
-                  <span className="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
+                <li style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  color: '#6b7280'
+                }}>
+                  <span style={{
+                    width: '8px',
+                    height: '8px',
+                    background: '#8b5cf6',
+                    borderRadius: '50%',
+                    marginRight: '0.75rem'
+                  }}></span>
                   6 participants maximum
                 </li>
               </ul>
-              <button className="w-full bg-purple-600 text-white py-2 rounded-lg hover:bg-purple-700">
+              <a href="/inscription" className="btn btn-primary" style={{ width: '100%', textAlign: 'center' }}>
                 S'inscrire
-              </button>
+              </a>
             </div>
           </div>
+        </div>
 
           {/* Options supplémentaires */}
           <div className="mt-8 bg-white rounded-lg shadow-md p-6">
@@ -125,192 +332,557 @@ export default function TarifsPage() {
               </div>
             </div>
           </div>
-        </section>
+        </div>
 
-        {/* Tarifs des cours */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Tarifs des Cours Réguliers</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-lg font-semibold mb-4">Abonnement Mensuel</h3>
-              <div className="mb-4">
-                <span className="text-2xl font-bold text-blue-600">60€</span>
-                <span className="text-gray-600">/ mois</span>
+      {/* Tarifs des cours */}
+      <div style={{ marginBottom: '3rem' }}>
+        <h2 style={{
+          fontSize: '2rem',
+          fontWeight: '700',
+          marginBottom: '2rem',
+          textAlign: 'center',
+          color: '#1f2937'
+        }}>
+          Tarifs des Cours Réguliers
+        </h2>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+          gap: '1.5rem'
+        }}>
+          <div className="card">
+            <div className="card-body">
+              <h3 style={{
+                fontSize: '1.125rem',
+                fontWeight: '600',
+                marginBottom: '1rem'
+              }}>
+                Abonnement Mensuel
+              </h3>
+              <div style={{ marginBottom: '1rem' }}>
+                <span style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '700',
+                  color: '#2563eb'
+                }}>
+                  60€
+                </span>
+                <span style={{ color: '#6b7280' }}> / mois</span>
               </div>
-              <ul className="space-y-2 text-gray-600 text-sm">
+              <ul style={{
+                listStyle: 'none',
+                padding: 0,
+                color: '#6b7280',
+                fontSize: '0.875rem',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '0.25rem'
+              }}>
                 <li>• 1 cours par semaine</li>
                 <li>• 4 cours par mois</li>
                 <li>• Engagement 1 mois</li>
               </ul>
             </div>
+          </div>
 
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-lg font-semibold mb-4">Abonnement Mensuel+</h3>
-              <div className="mb-4">
-                <span className="text-2xl font-bold text-green-600">100€</span>
-                <span className="text-gray-600">/ mois</span>
+          <div className="card">
+            <div className="card-body">
+              <h3 style={{
+                fontSize: '1.125rem',
+                fontWeight: '600',
+                marginBottom: '1rem'
+              }}>
+                Abonnement Mensuel+
+              </h3>
+              <div style={{ marginBottom: '1rem' }}>
+                <span style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '700',
+                  color: '#059669'
+                }}>
+                  100€
+                </span>
+                <span style={{ color: '#6b7280' }}> / mois</span>
               </div>
-              <ul className="space-y-2 text-gray-600 text-sm">
+              <ul style={{
+                listStyle: 'none',
+                padding: 0,
+                color: '#6b7280',
+                fontSize: '0.875rem',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '0.25rem'
+              }}>
                 <li>• 2 cours par semaine</li>
                 <li>• 8 cours par mois</li>
                 <li>• Engagement 1 mois</li>
               </ul>
             </div>
+          </div>
 
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-lg font-semibold mb-4">Abonnement Trimestriel</h3>
-              <div className="mb-4">
-                <span className="text-2xl font-bold text-purple-600">165€</span>
-                <span className="text-gray-600">/ trimestre</span>
+          <div className="card">
+            <div className="card-body">
+              <h3 style={{
+                fontSize: '1.125rem',
+                fontWeight: '600',
+                marginBottom: '1rem'
+              }}>
+                Abonnement Trimestriel
+              </h3>
+              <div style={{ marginBottom: '1rem' }}>
+                <span style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '700',
+                  color: '#7c3aed'
+                }}>
+                  165€
+                </span>
+                <span style={{ color: '#6b7280' }}> / trimestre</span>
               </div>
-              <ul className="space-y-2 text-gray-600 text-sm">
+              <ul style={{
+                listStyle: 'none',
+                padding: 0,
+                color: '#6b7280',
+                fontSize: '0.875rem',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '0.25rem'
+              }}>
                 <li>• 1 cours par semaine</li>
                 <li>• 12 cours par trimestre</li>
                 <li>• Économie de 15€</li>
               </ul>
             </div>
+          </div>
 
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-lg font-semibold mb-4">Abonnement Annuel</h3>
-              <div className="mb-4">
-                <span className="text-2xl font-bold text-red-600">590€</span>
-                <span className="text-gray-600">/ an</span>
+          <div className="card">
+            <div className="card-body">
+              <h3 style={{
+                fontSize: '1.125rem',
+                fontWeight: '600',
+                marginBottom: '1rem'
+              }}>
+                Abonnement Annuel
+              </h3>
+              <div style={{ marginBottom: '1rem' }}>
+                <span style={{
+                  fontSize: '1.5rem',
+                  fontWeight: '700',
+                  color: '#dc2626'
+                }}>
+                  590€
+                </span>
+                <span style={{ color: '#6b7280' }}> / an</span>
               </div>
-              <ul className="space-y-2 text-gray-600 text-sm">
+              <ul style={{
+                listStyle: 'none',
+                padding: 0,
+                color: '#6b7280',
+                fontSize: '0.875rem',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '0.25rem'
+              }}>
                 <li>• 1 cours par semaine</li>
                 <li>• 48 cours par an</li>
                 <li>• Économie de 130€</li>
               </ul>
             </div>
           </div>
-        </section>
+        </div>
+      </div>
 
-        {/* Offres spéciales */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Offres Spéciales</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-gradient-to-r from-pink-50 to-purple-50 border border-purple-200 rounded-lg p-6">
-              <h3 className="text-xl font-semibold mb-4">Cours d'essai</h3>
-              <div className="mb-4">
-                <span className="text-2xl font-bold text-purple-600">GRATUIT</span>
-              </div>
-              <ul className="space-y-2 text-gray-700 mb-4">
-                <li>• Premier cours gratuit</li>
-                <li>• Sans engagement</li>
-                <li>• Valable pour tous les cours</li>
-                <li>• Réservation obligatoire</li>
-              </ul>
-              <button className="w-full bg-purple-600 text-white py-2 rounded-lg hover:bg-purple-700">
-                Réserver mon essai
-              </button>
+      {/* Offres spéciales */}
+      <div style={{ marginBottom: '3rem' }}>
+        <h2 style={{
+          fontSize: '2rem',
+          fontWeight: '700',
+          marginBottom: '2rem',
+          textAlign: 'center',
+          color: '#1f2937'
+        }}>
+          Offres Spéciales
+        </h2>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+          gap: '1.5rem'
+        }}>
+          <div style={{
+            background: 'linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%)',
+            border: '1px solid #d8b4fe',
+            borderRadius: '0.5rem',
+            padding: '1.5rem'
+          }}>
+            <h3 style={{
+              fontSize: '1.25rem',
+              fontWeight: '600',
+              marginBottom: '1rem',
+              color: '#7c3aed'
+            }}>
+              Cours d'essai
+            </h3>
+            <div style={{ marginBottom: '1rem' }}>
+              <span style={{
+                fontSize: '1.5rem',
+                fontWeight: '700',
+                color: '#7c3aed'
+              }}>
+                GRATUIT
+              </span>
             </div>
-
-            <div className="bg-gradient-to-r from-blue-50 to-green-50 border border-blue-200 rounded-lg p-6">
-              <h3 className="text-xl font-semibold mb-4">Couples -15%</h3>
-              <div className="mb-4">
-                <span className="text-2xl font-bold text-blue-600">OFFRE COUPLE</span>
-              </div>
-              <ul className="space-y-2 text-gray-700 mb-4">
-                <li>• -15% pour les couples</li>
-                <li>• Valable sur tous les abonnements</li>
-                <li>• Même niveau ou différents</li>
-                <li>• Aucune condition</li>
-              </ul>
-              <button className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700">
-                En savoir plus
-              </button>
-            </div>
-
-            <div className="bg-gradient-to-r from-yellow-50 to-orange-50 border border-yellow-200 rounded-lg p-6">
-              <h3 className="text-xl font-semibold mb-4">Étudiants -20%</h3>
-              <div className="mb-4">
-                <span className="text-2xl font-bold text-orange-600">-20%</span>
-              </div>
-              <ul className="space-y-2 text-gray-700 mb-4">
-                <li>• Pour tous les étudiants</li>
-                <li>• Valable sur présentation de carte</li>
-                <li>• Sauf offres spéciales</li>
-                <li>• Cumulable avec offre couple</li>
-              </ul>
-              <button className="w-full bg-orange-600 text-white py-2 rounded-lg hover:bg-orange-700">
-                En savoir plus
-              </button>
-            </div>
-
-            <div className="bg-gradient-to-r from-green-50 to-teal-50 border border-green-200 rounded-lg p-6">
-              <h3 className="text-xl font-semibold mb-4">Parrainage</h3>
-              <div className="mb-4">
-                <span className="text-2xl font-bold text-green-600">50€</span>
-              </div>
-              <ul className="space-y-2 text-gray-700 mb-4">
-                <li>• Parrainez un nouvel élève</li>
-                <li>• 50€ de réduction pour vous</li>
-                <li>• 25€ de réduction pour le filleul</li>
-                <li>• Cumulable sans limite</li>
-              </ul>
-              <button className="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700">
-                Parrainer
-              </button>
-            </div>
+            <ul style={{
+              listStyle: 'none',
+              padding: 0,
+              marginBottom: '1rem',
+              color: '#374151',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '0.25rem'
+            }}>
+              <li>• Premier cours gratuit</li>
+              <li>• Sans engagement</li>
+              <li>• Valable pour tous les cours</li>
+              <li>• Réservation obligatoire</li>
+            </ul>
+            <a href="/contact" className="btn btn-secondary" style={{ width: '100%', textAlign: 'center' }}>
+              Réserver mon essai
+            </a>
           </div>
-        </section>
 
-        {/* Conditions de paiement */}
-        <section>
-          <h2 className="text-2xl font-bold mb-6">Conditions de Paiement</h2>
-          <div className="bg-white rounded-lg shadow-md p-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div style={{
+            background: 'linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%)',
+            border: '1px solid #93c5fd',
+            borderRadius: '0.5rem',
+            padding: '1.5rem'
+          }}>
+            <h3 style={{
+              fontSize: '1.25rem',
+              fontWeight: '600',
+              marginBottom: '1rem',
+              color: '#2563eb'
+            }}>
+              Couples -15%
+            </h3>
+            <div style={{ marginBottom: '1rem' }}>
+              <span style={{
+                fontSize: '1.5rem',
+                fontWeight: '700',
+                color: '#2563eb'
+              }}>
+                OFFRE COUPLE
+              </span>
+            </div>
+            <ul style={{
+              listStyle: 'none',
+              padding: 0,
+              marginBottom: '1rem',
+              color: '#374151',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '0.25rem'
+            }}>
+              <li>• -15% pour les couples</li>
+              <li>• Valable sur tous les abonnements</li>
+              <li>• Même niveau ou différents</li>
+              <li>• Aucune condition</li>
+            </ul>
+            <a href="/contact" className="btn btn-secondary" style={{ width: '100%', textAlign: 'center' }}>
+              En savoir plus
+            </a>
+          </div>
+
+          <div style={{
+            background: 'linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%)',
+            border: '1px solid #fcd34d',
+            borderRadius: '0.5rem',
+            padding: '1.5rem'
+          }}>
+            <h3 style={{
+              fontSize: '1.25rem',
+              fontWeight: '600',
+              marginBottom: '1rem',
+              color: '#d97706'
+            }}>
+              Étudiants -20%
+            </h3>
+            <div style={{ marginBottom: '1rem' }}>
+              <span style={{
+                fontSize: '1.5rem',
+                fontWeight: '700',
+                color: '#d97706'
+              }}>
+                -20%
+              </span>
+            </div>
+            <ul style={{
+              listStyle: 'none',
+              padding: 0,
+              marginBottom: '1rem',
+              color: '#374151',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '0.25rem'
+            }}>
+              <li>• Pour tous les étudiants</li>
+              <li>• Valable sur présentation de carte</li>
+              <li>• Sauf offres spéciales</li>
+              <li>• Cumulable avec offre couple</li>
+            </ul>
+            <a href="/contact" className="btn btn-secondary" style={{ width: '100%', textAlign: 'center' }}>
+              En savoir plus
+            </a>
+          </div>
+
+          <div style={{
+            background: 'linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%)',
+            border: '1px solid #86efac',
+            borderRadius: '0.5rem',
+            padding: '1.5rem'
+          }}>
+            <h3 style={{
+              fontSize: '1.25rem',
+              fontWeight: '600',
+              marginBottom: '1rem',
+              color: '#16a34a'
+            }}>
+              Parrainage
+            </h3>
+            <div style={{ marginBottom: '1rem' }}>
+              <span style={{
+                fontSize: '1.5rem',
+                fontWeight: '700',
+                color: '#16a34a'
+              }}>
+                50€
+              </span>
+            </div>
+            <ul style={{
+              listStyle: 'none',
+              padding: 0,
+              marginBottom: '1rem',
+              color: '#374151',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '0.25rem'
+            }}>
+              <li>• Parrainez un nouvel élève</li>
+              <li>• 50€ de réduction pour vous</li>
+              <li>• 25€ de réduction pour le filleul</li>
+              <li>• Cumulable sans limite</li>
+            </ul>
+            <a href="/contact" className="btn btn-secondary" style={{ width: '100%', textAlign: 'center' }}>
+              Parrainer
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Conditions de paiement */}
+      <div>
+        <h2 style={{
+          fontSize: '2rem',
+          fontWeight: '700',
+          marginBottom: '2rem',
+          textAlign: 'center',
+          color: '#1f2937'
+        }}>
+          Conditions de Paiement
+        </h2>
+        <div className="card">
+          <div className="card-body">
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gap: '2rem',
+              marginBottom: '2rem'
+            }}>
               <div>
-                <h3 className="text-lg font-semibold mb-4">Moyens de paiement</h3>
-                <ul className="space-y-2 text-gray-600">
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
+                <h3 style={{
+                  fontSize: '1.125rem',
+                  fontWeight: '600',
+                  marginBottom: '1rem',
+                  color: '#1f2937'
+                }}>
+                  Moyens de paiement
+                </h3>
+                <ul style={{
+                  listStyle: 'none',
+                  padding: 0,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '0.5rem'
+                }}>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    color: '#6b7280'
+                  }}>
+                    <span style={{
+                      width: '8px',
+                      height: '8px',
+                      background: '#3b82f6',
+                      borderRadius: '50%',
+                      marginRight: '0.75rem'
+                    }}></span>
                     Chèque bancaire
                   </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    color: '#6b7280'
+                  }}>
+                    <span style={{
+                      width: '8px',
+                      height: '8px',
+                      background: '#3b82f6',
+                      borderRadius: '50%',
+                      marginRight: '0.75rem'
+                    }}></span>
                     Virement bancaire
                   </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    color: '#6b7280'
+                  }}>
+                    <span style={{
+                      width: '8px',
+                      height: '8px',
+                      background: '#3b82f6',
+                      borderRadius: '50%',
+                      marginRight: '0.75rem'
+                    }}></span>
                     Carte bancaire (sur place)
                   </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    color: '#6b7280'
+                  }}>
+                    <span style={{
+                      width: '8px',
+                      height: '8px',
+                      background: '#3b82f6',
+                      borderRadius: '50%',
+                      marginRight: '0.75rem'
+                    }}></span>
                     Espèces (sur place)
                   </li>
                 </ul>
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold mb-4">Modalités de règlement</h3>
-                <ul className="space-y-2 text-gray-600">
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
+                <h3 style={{
+                  fontSize: '1.125rem',
+                  fontWeight: '600',
+                  marginBottom: '1rem',
+                  color: '#1f2937'
+                }}>
+                  Modalités de règlement
+                </h3>
+                <ul style={{
+                  listStyle: 'none',
+                  padding: 0,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '0.5rem'
+                }}>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    color: '#6b7280'
+                  }}>
+                    <span style={{
+                      width: '8px',
+                      height: '8px',
+                      background: '#10b981',
+                      borderRadius: '50%',
+                      marginRight: '0.75rem'
+                    }}></span>
                     Paiement en 1 fois pour les abonnements mensuels
                   </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    color: '#6b7280'
+                  }}>
+                    <span style={{
+                      width: '8px',
+                      height: '8px',
+                      background: '#10b981',
+                      borderRadius: '50%',
+                      marginRight: '0.75rem'
+                    }}></span>
                     Paiement en 3 fois possible pour l'abonnement annuel
                   </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    color: '#6b7280'
+                  }}>
+                    <span style={{
+                      width: '8px',
+                      height: '8px',
+                      background: '#10b981',
+                      borderRadius: '50%',
+                      marginRight: '0.75rem'
+                    }}></span>
                     Acompte de 30% requis pour les stages
                   </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
+                  <li style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    color: '#6b7280'
+                  }}>
+                    <span style={{
+                      width: '8px',
+                      height: '8px',
+                      background: '#10b981',
+                      borderRadius: '50%',
+                      marginRight: '0.75rem'
+                    }}></span>
                     Solde à régler avant le début du stage
                   </li>
                 </ul>
               </div>
             </div>
 
-            <div className="mt-8 pt-6 border-t border-gray-200">
-              <h3 className="text-lg font-semibold mb-4">Conditions d'annulation</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div style={{
+              marginTop: '2rem',
+              paddingTop: '1.5rem',
+              borderTop: '1px solid #e5e7eb'
+            }}>
+              <h3 style={{
+                fontSize: '1.125rem',
+                fontWeight: '600',
+                marginBottom: '1rem',
+                color: '#1f2937'
+              }}>
+                Conditions d'annulation
+              </h3>
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+                gap: '2rem'
+              }}>
                 <div>
-                  <h4 className="font-semibold mb-3">Stages</h4>
-                  <ul className="space-y-1 text-gray-600 text-sm">
+                  <h4 style={{
+                    fontWeight: '600',
+                    marginBottom: '0.75rem',
+                    color: '#1f2937'
+                  }}>
+                    Stages
+                  </h4>
+                  <ul style={{
+                    listStyle: 'none',
+                    padding: 0,
+                    color: '#6b7280',
+                    fontSize: '0.875rem',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '0.25rem'
+                  }}>
                     <li>• Plus de 30 jours: remboursement à 100%</li>
                     <li>• 15 à 30 jours: remboursement à 80%</li>
                     <li>• 7 à 14 jours: remboursement à 50%</li>
@@ -318,8 +890,22 @@ export default function TarifsPage() {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-3">Abonnements</h4>
-                  <ul className="space-y-1 text-gray-600 text-sm">
+                  <h4 style={{
+                    fontWeight: '600',
+                    marginBottom: '0.75rem',
+                    color: '#1f2937'
+                  }}>
+                    Abonnements
+                  </h4>
+                  <ul style={{
+                    listStyle: 'none',
+                    padding: 0,
+                    color: '#6b7280',
+                    fontSize: '0.875rem',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '0.25rem'
+                  }}>
                     <li>• Résiliation 15 jours avant fin de mois</li>
                     <li>• Aucun remboursement en cours de mois</li>
                     <li>• Crédit possible pour absence justifiée</li>
@@ -329,8 +915,8 @@ export default function TarifsPage() {
               </div>
             </div>
           </div>
-        </section>
+        </div>
       </div>
-    </main>
+    </div>
   );
 }

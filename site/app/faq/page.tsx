@@ -69,90 +69,154 @@ export default function FAQPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-gray-50">
-      <div className="container mx-auto px-4 py-8">
-        <header className="mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Foire Aux Questions</h1>
-          <p className="text-lg text-gray-600">
-            Retrouvez les réponses aux questions les plus fréquentes
-          </p>
-        </header>
+    <div className="container py-12">
+      <h1 className="text-center mb-8">Foire Aux Questions</h1>
 
-        <section className="max-w-4xl mx-auto">
-          <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-            <h2 className="text-xl font-semibold mb-4">Questions les plus fréquentes</h2>
-            <div className="space-y-4">
+      <div className="max-w-4xl mx-auto">
+        <div className="card mb-6">
+          <div className="card-body">
+            <h2 className="mb-6">Questions les plus fréquentes</h2>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               {faqs.map((faq, index) => (
-                <details key={index} className="border-b border-gray-200 pb-4 last:border-b-0">
-                  <summary className="cursor-pointer font-semibold text-gray-900 hover:text-blue-600 focus:outline-none focus:text-blue-600 pb-2">
+                <details key={index} style={{
+                  borderBottom: '1px solid #e5e7eb',
+                  paddingBottom: '1rem'
+                }}>
+                  <summary style={{
+                    cursor: 'pointer',
+                    fontWeight: '600',
+                    color: '#111827',
+                    paddingBottom: '0.5rem',
+                    listStyle: 'none'
+                  }}>
                     {faq.question}
                   </summary>
-                  <div className="mt-3 text-gray-600 pl-4">
+                  <div style={{
+                    marginTop: '0.75rem',
+                    color: '#6b7280',
+                    paddingLeft: '1rem',
+                    lineHeight: '1.6'
+                  }}>
                     {faq.answer}
                   </div>
                 </details>
               ))}
             </div>
           </div>
+        </div>
 
-          <div className="bg-blue-50 rounded-lg p-6 mb-8">
-            <h3 className="text-lg font-semibold mb-3">Vous ne trouvez pas votre réponse ?</h3>
-            <p className="text-gray-700 mb-4">
-              N'hésitez pas à nous contacter directement. Notre équipe sera ravie de répondre 
-              à toutes vos questions personnelles.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a 
-                href="/contact" 
-                className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 text-center inline-block"
-              >
-                Contacter l'équipe
-              </a>
-              <a 
-                href="tel:0612345678" 
-                className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 text-center inline-block"
-              >
-                Appeler: 06 12 34 56 78
-              </a>
-              <a 
-                href="mailto:contact@danser-la-vie.eu" 
-                className="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 text-center inline-block"
-              >
-                Envoyer un email
-              </a>
-            </div>
+        <div style={{
+          background: 'linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%)',
+          border: '1px solid #93c5fd',
+          borderRadius: '0.5rem',
+          padding: '1.5rem',
+          marginBottom: '2rem'
+        }}>
+          <h3 style={{
+            fontSize: '1.125rem',
+            fontWeight: '600',
+            marginBottom: '0.75rem',
+            color: '#1e40af'
+          }}>
+            Vous ne trouvez pas votre réponse ?
+          </h3>
+          <p style={{
+            color: '#1e40af',
+            marginBottom: '1rem',
+            lineHeight: '1.6'
+          }}>
+            N'hésitez pas à nous contacter directement. Notre équipe sera ravie de répondre
+            à toutes vos questions personnelles.
+          </p>
+          <div style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: '0.75rem',
+            justifyContent: 'center'
+          }}>
+            <a
+              href="/contact"
+              className="btn btn-primary"
+            >
+              Contacter l'équipe
+            </a>
+            <a
+              href="tel:0612345678"
+              className="btn btn-secondary"
+            >
+              Appeler: 06 12 34 56 78
+            </a>
+            <a
+              href="mailto:contact@danser-la-vie.eu"
+              className="btn btn-secondary"
+            >
+              Envoyer un email
+            </a>
           </div>
+        </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-lg font-semibold mb-4">Liens utiles</h3>
-              <ul className="space-y-2">
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+          gap: '1.5rem'
+        }}>
+          <div className="card">
+            <div className="card-body">
+              <h3 className="card-title">Liens utiles</h3>
+              <ul style={{
+                listStyle: 'none',
+                padding: 0,
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '0.5rem'
+              }}>
                 <li>
-                  <a href="/inscription" className="text-blue-600 hover:text-blue-800">
+                  <a href="/inscription" style={{
+                    color: '#2563eb',
+                    textDecoration: 'none'
+                  }}>
                     → S'inscrire aux cours
                   </a>
                 </li>
                 <li>
-                  <a href="/stages" className="text-blue-600 hover:text-blue-800">
+                  <a href="/stages" style={{
+                    color: '#2563eb',
+                    textDecoration: 'none'
+                  }}>
                     → Voir les stages disponibles
                   </a>
                 </li>
                 <li>
-                  <a href="/tarifs" className="text-blue-600 hover:text-blue-800">
+                  <a href="/tarifs" style={{
+                    color: '#2563eb',
+                    textDecoration: 'none'
+                  }}>
                     → Consulter les tarifs
                   </a>
                 </li>
                 <li>
-                  <a href="/cours" className="text-blue-600 hover:text-blue-800">
+                  <a href="/cours" style={{
+                    color: '#2563eb',
+                    textDecoration: 'none'
+                  }}>
                     → Découvrir les professeurs
                   </a>
                 </li>
               </ul>
             </div>
+          </div>
 
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-lg font-semibold mb-4">Informations pratiques</h3>
-              <ul className="space-y-2 text-gray-600">
+          <div className="card">
+            <div className="card-body">
+              <h3 className="card-title">Informations pratiques</h3>
+              <ul style={{
+                listStyle: 'none',
+                padding: 0,
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '0.5rem',
+                color: '#6b7280'
+              }}>
                 <li>
                   <strong>Horaires:</strong> Lundi-Vendredi 9h-18h
                 </li>
@@ -163,13 +227,13 @@ export default function FAQPage() {
                   <strong>Email:</strong> contact@danser-la-vie.eu
                 </li>
                 <li>
-                  <strong>Adresse:</strong> 123 rue de la Danse, 75000 Paris
+                  <strong>Adresse:</strong> Vallée de la Maurienne
                 </li>
               </ul>
             </div>
           </div>
-        </section>
+        </div>
       </div>
-    </main>
+    </div>
   );
 }
