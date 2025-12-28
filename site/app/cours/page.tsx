@@ -240,9 +240,9 @@ const Page = () => {
                     height: '80px',
                     position: 'relative'
                   }}>
-                    {getImageUrl((prof.photo as any)?.[0]) ? (
+                    {getImageUrl(prof.photo) ? (
                       <Image
-                        src={getImageUrl((prof.photo as any)[0])}
+                        src={getImageUrl(prof.photo)}
                         alt={`Photo de ${prof.prenom} ${prof.nom}`}
                         width={80}
                         height={80}
@@ -264,10 +264,25 @@ const Page = () => {
                       </div>
                     )}
                   </div>
-                  <div className="card-body">
-                    <h3 className="card-title text-center">{prof.prenom || 'Prénom'} {prof.nom || 'Nom'}</h3>
-                    <p className="card-text">{prof.biographie || 'Professeur passionné de danse'}</p>
-                  </div>
+                   <div className="card-body">
+                     <h3 className="card-title text-center">{prof.prenom || 'Prénom'} {prof.nom || 'Nom'}</h3>
+                     <p className="card-text">{prof.biographie || 'Professeur passionné de danse'}</p>
+                     {prof.specialites && prof.specialites.length > 0 && (
+                       <p className="text-sm text-gray-600 mt-2">
+                         <strong>Spécialités:</strong> {prof.specialites.join(', ')}
+                       </p>
+                     )}
+                     {prof.email && (
+                       <p className="text-sm text-gray-600 mt-1">
+                         <strong>Email:</strong> {prof.email}
+                       </p>
+                     )}
+                     {prof.telephone && (
+                       <p className="text-sm text-gray-600 mt-1">
+                         <strong>Tél:</strong> {prof.telephone}
+                       </p>
+                     )}
+                   </div>
                 </div>
               ))
             ) : (

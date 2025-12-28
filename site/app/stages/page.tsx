@@ -46,15 +46,15 @@ export default function StagesPage() {
     let filtered = stages;
 
     if (filters.niveau) {
-      filtered = filtered.filter(stage => stage.niveau === filters.niveau);
+      filtered = filtered.filter(stage => stage.level === filters.niveau);
     }
 
     if (filters.search) {
       const searchTerm = filters.search.toLowerCase();
       filtered = filtered.filter(stage =>
-        stage.titre.toLowerCase().includes(searchTerm) ||
+        stage.title.toLowerCase().includes(searchTerm) ||
         stage.description.toLowerCase().includes(searchTerm) ||
-        stage.lieu.toLowerCase().includes(searchTerm)
+        stage.location.toLowerCase().includes(searchTerm)
       );
     }
 
@@ -129,62 +129,62 @@ export default function StagesPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
            {filteredStages.length > 0 ? (
              filteredStages.map((stage) => (
-            <div key={stage.id} className="card">
-              {getImageUrl(stage.image) ? (
-                <div style={{ height: '200px', position: 'relative', overflow: 'hidden' }}>
-                  <Image
-                    src={getImageUrl(stage.image)!}
-                    alt={getImageAlt(stage.image, `Stage ${stage.titre}`)}
-                    fill
-                    style={{ objectFit: 'cover' }}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    loading="lazy"
-                    placeholder="blur"
-                    blurDataURL={FALLBACK_IMAGES.stage.url}
-                  />
-                </div>
-              ) : (
-                <div className="card-header" style={{
-                  height: '200px',
-                  background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center'
-                }}>
-                  <span style={{ fontSize: '3rem', opacity: '0.8' }}>🎭</span>
-                </div>
-              )}
-               <div className="card-body">
-                   <h3 className="card-title">{stage.titre || 'Stage de danse'}</h3>
-                   {stage.niveau && (
-                     <span style={{
-                       display: 'inline-block',
-                       background: '#e5e7eb',
-                       color: '#374151',
-                       padding: '0.25rem 0.75rem',
-                       borderRadius: '0.5rem',
-                       fontSize: '0.875rem',
-                       fontWeight: '500',
-                       marginBottom: '0.5rem'
-                     }}>
-                       {getNiveauLabel(stage.niveau)}
-                     </span>
-                   )}
-                   <p className="card-text">{stage.description || 'Description du stage'}</p>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
-                    <span>📅 {stage.date_debut ? new Date(stage.date_debut).toLocaleDateString('fr-FR') : 'Date à confirmer'} - {stage.date_fin ? new Date(stage.date_fin).toLocaleDateString('fr-FR') : 'Date à confirmer'}</span>
-                    <span style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#059669' }}>{stage.prix || 'Prix sur demande'}€</span>
-                  </div>
-                   <div style={{ display: 'flex', gap: '0.5rem', width: '100%' }}>
-                     <a href={`/stages/${stage.documentId}`} className="btn btn-secondary" style={{ flex: 1, textAlign: 'center' }}>
-                       Détails
-                     </a>
-                     <a href={`/inscription?stage=${stage.id || ''}`} className="btn btn-primary" style={{ flex: 1, textAlign: 'center' }}>
-                       S'inscrire
-                     </a>
+             <div key={stage.id} className="card">
+               {getImageUrl(stage.image) ? (
+                 <div style={{ height: '200px', position: 'relative', overflow: 'hidden' }}>
+                   <Image
+                     src={getImageUrl(stage.image)!}
+                     alt={getImageAlt(stage.image, `Stage ${stage.title}`)}
+                     fill
+                     style={{ objectFit: 'cover' }}
+                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                     loading="lazy"
+                     placeholder="blur"
+                     blurDataURL={FALLBACK_IMAGES.stage.url}
+                   />
+                 </div>
+               ) : (
+                 <div className="card-header" style={{
+                   height: '200px',
+                   background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                   display: 'flex',
+                   alignItems: 'center',
+                   justifyContent: 'center'
+                 }}>
+                   <span style={{ fontSize: '3rem', opacity: '0.8' }}>🎭</span>
+                 </div>
+               )}
+                <div className="card-body">
+                    <h3 className="card-title">{stage.title || 'Stage de danse'}</h3>
+                    {stage.level && (
+                      <span style={{
+                        display: 'inline-block',
+                        background: '#e5e7eb',
+                        color: '#374151',
+                        padding: '0.25rem 0.75rem',
+                        borderRadius: '0.5rem',
+                        fontSize: '0.875rem',
+                        fontWeight: '500',
+                        marginBottom: '0.5rem'
+                      }}>
+                        {getNiveauLabel(stage.level)}
+                      </span>
+                    )}
+                    <p className="card-text">{stage.description || 'Description du stage'}</p>
+                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+                     <span>📅 {stage.dateStart ? new Date(stage.dateStart).toLocaleDateString('fr-FR') : 'Date à confirmer'} - {stage.dateEnd ? new Date(stage.dateEnd).toLocaleDateString('fr-FR') : 'Date à confirmer'}</span>
+                     <span style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#059669' }}>{stage.price || 'Prix sur demande'}€</span>
                    </div>
-                </div>
-              </div>
+                    <div style={{ display: 'flex', gap: '0.5rem', width: '100%' }}>
+                      <a href={`/stages/${stage.documentId}`} className="btn btn-secondary" style={{ flex: 1, textAlign: 'center' }}>
+                        Détails
+                      </a>
+                      <a href={`/inscription?stage=${stage.id || ''}`} className="btn btn-primary" style={{ flex: 1, textAlign: 'center' }}>
+                        S'inscrire
+                      </a>
+                    </div>
+                 </div>
+               </div>
             ))
            ) : (
              <>

@@ -43,13 +43,13 @@ export default function StageDetailPage() {
   return (
     <div className="container py-12">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-center mb-8">{stage.titre || 'Stage de danse'}</h1>
+        <h1 className="text-center mb-8">{stage.title || 'Stage de danse'}</h1>
 
         {getImageUrl(stage.image) ? (
           <div className="mb-8" style={{ height: '400px', position: 'relative', overflow: 'hidden', borderRadius: '8px' }}>
             <Image
               src={getImageUrl(stage.image)!}
-              alt={getImageAlt(stage.image, `Image du stage ${stage.titre}`)}
+              alt={getImageAlt(stage.image, `Image du stage ${stage.title}`)}
               fill
               style={{ objectFit: 'cover' }}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -70,16 +70,24 @@ export default function StageDetailPage() {
             <p className="mb-4">{stage.description || 'Description du stage'}</p>
 
             <h2 className="text-xl font-bold mb-4">Programme</h2>
-            <p>{stage.programme || 'Programme détaillé à venir'}</p>
+            {stage.program && stage.program.length > 0 ? (
+              <ul className="list-disc list-inside">
+                {stage.program.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            ) : (
+              <p>Programme détaillé à venir</p>
+            )}
           </div>
 
           <div>
             <h2 className="text-xl font-bold mb-4">Informations pratiques</h2>
             <div className="space-y-2">
-              <p><strong>📅 Dates:</strong> {stage.date_debut ? new Date(stage.date_debut).toLocaleDateString('fr-FR') : 'Date à confirmer'} - {stage.date_fin ? new Date(stage.date_fin).toLocaleDateString('fr-FR') : 'Date à confirmer'}</p>
-              <p><strong>📍 Lieu:</strong> {stage.lieu || 'Lieu à confirmer'}</p>
-              <p><strong>💰 Tarif:</strong> {stage.prix || 'Prix sur demande'}€</p>
-              <p><strong>👥 Niveau:</strong> {stage.niveau || 'Tous niveaux'}</p>
+              <p><strong>📅 Dates:</strong> {stage.dateStart ? new Date(stage.dateStart).toLocaleDateString('fr-FR') : 'Date à confirmer'} - {stage.dateEnd ? new Date(stage.dateEnd).toLocaleDateString('fr-FR') : 'Date à confirmer'}</p>
+              <p><strong>📍 Lieu:</strong> {stage.location || 'Lieu à confirmer'}</p>
+              <p><strong>💰 Tarif:</strong> {stage.price || 'Prix sur demande'}€</p>
+              <p><strong>👥 Niveau:</strong> {stage.level || 'Tous niveaux'}</p>
             </div>
           </div>
         </div>

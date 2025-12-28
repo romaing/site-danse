@@ -21,12 +21,10 @@ export interface Professeur {
   biographie?: string;
   specialites?: string[];
   photo?: {
-    data: {
-      attributes: {
-        url: string;
-        alternativeText?: string;
-      };
-    };
+    id: number;
+    url: string;
+    alternativeText?: string;
+    formats?: any;
   };
   email?: string;
   telephone?: string;
@@ -35,25 +33,23 @@ export interface Professeur {
 export interface Stage {
   id: number;
   documentId: string;
-  titre: string;
+  title: string;
   description: string;
-  date_debut: string;
-  date_fin: string;
-  lieu: string;
-  prix: number;
+  dateStart: string;
+  dateEnd: string;
+  location: string;
+  price: number;
   professeurs?: {
     data: Professeur[];
   };
   image?: {
-    data: {
-      attributes: {
-        url: string;
-        alternativeText?: string;
-      };
-    };
+    id: number;
+    url: string;
+    alternativeText?: string;
+    formats?: any;
   };
-  programme?: string;
-  niveau: 'debutant' | 'intermediaire' | 'avance' | 'tous_niveaux';
+  program?: any;
+  level: string;
 }
 
 export interface Seance {
@@ -142,8 +138,8 @@ class StrapiClient {
       headers['Content-Type'] = 'application/json';
     }
 
-    // Send Authorization header if we have a token
-    if (this.token) {
+    // Send Authorization header if we have a token and it's not a public API
+    if (this.token && !endpoint.includes('/professeurs') && !endpoint.includes('/stages')) {
       headers.Authorization = `Bearer ${this.token}`;
     }
 

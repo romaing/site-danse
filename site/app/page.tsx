@@ -332,90 +332,90 @@ export default function HomePage() {
                      overflow: 'hidden'
                    }}>
                      {getImageUrl(stage.image) ? (
-                       <Image
-                         src={getImageUrl(stage.image)!}
-                         alt={getImageAlt(stage.image, `Stage ${stage.titre}`)}
-                         fill
-                         style={{ objectFit: 'cover' }}
-                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 25vw"
-                         loading="lazy"
-                         placeholder="blur"
-                         blurDataURL={FALLBACK_IMAGES.stage.url}
-                       />
-                     ) : (
-                       <div style={{
-                         width: '100%',
-                         height: '100%',
-                         background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-                         display: 'flex',
-                         alignItems: 'center',
-                         justifyContent: 'center'
-                       }}>
-                         <div style={{
-                           fontSize: '4rem',
-                           opacity: '0.8'
-                         }}>
-                           {stage.niveau === 'debutant' ? '🌟' :
-                            stage.niveau === 'intermediaire' ? '⭐' :
-                            stage.niveau === 'avance' ? '💫' : '🎭'}
-                         </div>
-                       </div>
-                     )}
-                     <div style={{
-                       position: 'absolute',
-                       bottom: '1rem',
-                       left: '1rem',
-                       right: '1rem',
-                       background: 'rgba(255,255,255,0.9)',
-                       padding: '0.5rem 1rem',
-                       borderRadius: '8px',
-                       textAlign: 'center',
-                       fontSize: '0.9rem',
-                       fontWeight: '600',
-                       color: '#667eea'
-                     }}>
-                       {stage.niveau === 'debutant' ? 'Débutant' :
-                        stage.niveau === 'intermediaire' ? 'Intermédiaire' :
-                        stage.niveau === 'avance' ? 'Avancé' : 'Tous niveaux'}
-                     </div>
+                        <Image
+                          src={getImageUrl(stage.image)!}
+                          alt={getImageAlt(stage.image, `Stage ${stage.title}`)}
+                          fill
+                          style={{ objectFit: 'cover' }}
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 25vw"
+                          loading="lazy"
+                          placeholder="blur"
+                          blurDataURL={FALLBACK_IMAGES.stage.url}
+                        />
+                      ) : (
+                        <div style={{
+                          width: '100%',
+                          height: '100%',
+                          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center'
+                        }}>
+                          <div style={{
+                            fontSize: '4rem',
+                            opacity: '0.8'
+                          }}>
+                            {stage.level === 'debutant' ? '🌟' :
+                             stage.level === 'intermediaire' ? '⭐' :
+                             stage.level === 'avance' ? '💫' : '🎭'}
+                          </div>
+                        </div>
+                      )}
+                      <div style={{
+                        position: 'absolute',
+                        bottom: '1rem',
+                        left: '1rem',
+                        right: '1rem',
+                        background: 'rgba(255,255,255,0.9)',
+                        padding: '0.5rem 1rem',
+                        borderRadius: '8px',
+                        textAlign: 'center',
+                        fontSize: '0.9rem',
+                        fontWeight: '600',
+                        color: '#667eea'
+                      }}>
+                        {stage.level === 'debutant' ? 'Débutant' :
+                         stage.level === 'intermediaire' ? 'Intermédiaire' :
+                         stage.level === 'avance' ? 'Avancé' : 'Tous niveaux'}
+                      </div>
                    </div>
                   <div style={{ padding: '2rem' }}>
-                    <h3 style={{
-                      fontSize: '1.25rem',
-                      fontWeight: '600',
-                      marginBottom: '0.5rem',
-                      color: '#1f2937'
-                    }}>
-                        {stage.titre || 'Stage de danse'}
-                    </h3>
-                    <p style={{
-                      color: '#6b7280',
-                      marginBottom: '1rem',
-                      lineHeight: '1.5',
-                      fontSize: '0.9rem'
-                    }}>
-                        {stage.description?.substring(0, 100) || 'Stage de danse de salon dans un village de vacances'}...
-                    </p>
-                    <div style={{
-                      display: 'flex',
-                      justifyContent: 'space-between',
-                      alignItems: 'center',
-                      marginBottom: '1.5rem'
-                    }}>
-                      <div style={{
-                        fontSize: '0.9rem',
-                        color: '#6b7280'
-                      }}>
-                          📅 {stage.date_debut ? new Date(stage.date_debut).toLocaleDateString('fr-FR') : 'Date à confirmer'}
-                      </div>
-                      <div style={{
-                        fontSize: '1.5rem',
-                        fontWeight: '700',
-                        color: '#059669'
-                      }}>
-                          {stage.prix || 'Prix sur demande'}€
-                      </div>
-                    </div>
+                     <h3 style={{
+                       fontSize: '1.25rem',
+                       fontWeight: '600',
+                       marginBottom: '0.5rem',
+                       color: '#1f2937'
+                     }}>
+                         {stage.title || 'Stage de danse'}
+                     </h3>
+                     <p style={{
+                       color: '#6b7280',
+                       marginBottom: '1rem',
+                       lineHeight: '1.5',
+                       fontSize: '0.9rem'
+                     }}>
+                         {stage.description?.substring(0, 100) || 'Stage de danse de salon dans un village de vacances'}...
+                     </p>
+                     <div style={{
+                       display: 'flex',
+                       justifyContent: 'space-between',
+                       alignItems: 'center',
+                       marginBottom: '1.5rem'
+                     }}>
+                       <div style={{
+                         fontSize: '0.9rem',
+                         color: '#6b7280'
+                       }}>
+                           📅 {stage.dateStart ? new Date(stage.dateStart).toLocaleDateString('fr-FR') : 'Date à confirmer'}
+                       </div>
+                       <div style={{
+                         fontSize: '1.5rem',
+                         fontWeight: '700',
+                         color: '#059669'
+                       }}>
+                           {stage.price || 'Prix sur demande'}€
+                       </div>
+                     </div>
                     <div style={{ display: 'flex', gap: '0.75rem' }}>
                       <a href="/stages" style={{
                         flex: 1,
