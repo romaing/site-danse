@@ -103,13 +103,16 @@ export default function PresentationPage() {
           </div>
 
           <div>
-            {danse.image && (
-              <img
-                src={getImageUrl(danse.image)}
-                alt={`Image de ${danse.name}`}
-                className="w-full h-64 object-cover rounded-lg shadow-md"
-              />
-            )}
+             {danse.image && (
+               <div className="w-80 h-80 md:w-[40rem] md:h-[40rem] mx-auto rounded-lg shadow-md overflow-hidden">
+                 <img
+                   src={getImageUrl(danse.image)}
+                   alt={`Image de ${danse.name}`}
+                   className="w-full h-full object-cover"
+                   style={{ maxWidth: '100%', maxHeight: '100%' }}
+                 />
+               </div>
+             )}
           </div>
         </div>
 

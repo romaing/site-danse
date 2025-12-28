@@ -87,12 +87,19 @@ const Page = () => {
   const [danses, setDanses] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedDance, setSelectedDance] = useState('');
+  const [uniqueDanses, setUniqueDanses] = useState<any[]>([]);
 
   useEffect(() => {
     Promise.all([getProfesseurs(), getSeances(), getDanses()]).then(([profData, seanceData, danseData]) => {
       setProfesseurs(profData || []);
       setSeances(seanceData || []);
+
+      // Filter unique dances by name
+      const unique = danseData.filter((danse, index, self) =>
+        index === self.findIndex(d => d.name === danse.name)
+      );
       setDanses(danseData || []);
+      setUniqueDanses(unique);
       setLoading(false);
     }).catch(error => {
       console.error('Error loading data:', error);
@@ -131,9 +138,9 @@ const Page = () => {
           >
             Tous
           </button>
-          {danses.map(danse => (
+          {uniqueDanses.map(danse => (
             <button
-              key={danse.id}
+              key={danse.name}
               onClick={() => setSelectedDance(danse.name)}
               style={{
                 padding: '8px 16px',
